@@ -9,13 +9,13 @@ class SearchBar extends React.Component {
     onFormSubmit = (event) => {
       event.preventDefault();
 
-      this.props.onSubmit(this.state.term);
+      this.props.onSubmitPassedProp(this.state.term); //when in a class-based component, referenced props must use this.props
     };
 
     onInputChange = (event) => {
       this.setState({ term: event.target.value });
-
-      console.log(this.state.term)
+      
+      console.log(this.state.term);
     }
 
   render() {
