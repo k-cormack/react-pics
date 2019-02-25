@@ -7,14 +7,21 @@ import ImageList from './ImageList';
 
 // const App = () => { //funtional component declaration
 class App extends React.Component {
-  onSearchSubmit(term) {
-    axios.get('https://api.unsplash.com/search/photos', {
+  state = { images: [] };
+
+  onSearchSubmit = async (term) => {
+    const response = await axios.get('https://api.unsplash.com/search/photos', {
       params: { query: term },
       headers: {
         Authorization: 'Client-ID 188488376d31b81a3dd132219fb7929d8ca8e400c168f3af9b72886c3547efd0'
       }
-    });   
-    console.log(term);
+    });
+        console.log(this);
+        this.setState({ images: response.data.results });
+
+        console.log(response.data.results);
+        console.log(term);
+      
   }
 
   render() {
