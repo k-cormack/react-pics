@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="ui container" style={{marginTop: '10px'}}>
         <SearchBar onSubmitPassedProp={this.onSearchSubmit} /> {/* the passed prop can be named whatever you like */}
-        <ImageList images={this.state.images}/>
+        <ImageList images={this.state.images}/> {/* images here is being passed as a prop to ImageList */}
       </div>
       );
     }
